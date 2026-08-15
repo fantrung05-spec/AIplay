@@ -11,7 +11,8 @@ class $modify(AIPlayPlayer, PlayerObject) {
     void update(float dt) {
         PlayerObject::update(dt);
 
-        if (!g_aiEnabled || !PlayLayer::get()) return;
+        auto playLayer = PlayLayer::get();
+        if (!g_aiEnabled || !playLayer) return;
 
         auto playerPos = this->getPosition();
         CCRect scanBox = CCRect(
@@ -21,10 +22,8 @@ class $modify(AIPlayPlayer, PlayerObject) {
             40.0f
         );
 
-        auto playLayer = PlayLayer::get();
-        auto objects = playLayer->m_objects;
-
         bool hasObstacleAhead = false;
+        auto objects = playLayer->m_objects;
 
         if (objects) {
             for (int i = 0; i < objects->count(); ++i) {
@@ -32,8 +31,9 @@ class $modify(AIPlayPlayer, PlayerObject) {
                 if (!obj || obj->m_isDestroyed) continue;
 
                 if (scanBox.intersectsRect(obj->getObjectRect())) {
-                    if (obj->m_objectType == GameObjectType::Hazard || 
-                        obj->m_objectType == GameObjectType::Spike) {
+                    // Trong Geode SDK v3, kiem tra vat can bang m_objectType
+                    if (obj->m_objectType == GameObjectType::Spike || 
+                        obj->m_objectType == GameObjectType::Hazard) {
                         hasObstacleAhead = true;
                         break;
                     }
@@ -46,4 +46,3 @@ class $modify(AIPlayPlayer, PlayerObject) {
         }
     }
 };
-
