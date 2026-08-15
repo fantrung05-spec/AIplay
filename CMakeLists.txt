@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
 
-# Khai báo Geode SDK path từ môi trường của GitHub Action
 if(DEFINED ENV{GEODE_SDK})
     list(APPEND CMAKE_PREFIX_PATH "$ENV{GEODE_SDK}")
 endif()
