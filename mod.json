@@ -1,0 +1,13 @@
+{
+    "geode": "v2.0.0",
+    "gd": {
+        "win": "2.206",
+        "android": "2.206"
+    },
+    "id": "koreyz.aiplay",
+    "version": "v1.0.0",
+    "name": "AIplay",
+    "developer": "koreyz",
+    "description": "AIplay"
+}
+
