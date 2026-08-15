@@ -1,13 +1,9 @@
 {
-    "geode": "v2.0.0",
-    "gd": {
-        "win": "2.206",
-        "android": "2.206"
-    },
-    "id": "koreyz.aiplay",
-    "version": "v1.0.0",
-    "name": "AIplay",
-    "developer": "koreyz",
-    "description": "AIplay"
+  "geode": "3.0.0-beta.1",
+  "gd": "2.206",
+  "version": "v1.0.0",
+  "id": "fantrung05.aiplay",
+  "name": "AIplay",
+  "developer": "fantrung05-spec",
+  "description": "AI Play Mod for Geometry Dash"
 }
-
